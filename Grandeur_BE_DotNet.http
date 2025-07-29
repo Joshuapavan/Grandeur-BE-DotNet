@@ -1,0 +1,6 @@
+@Grandeur_BE_DotNet_HostAddress = http://localhost:5120
+
+GET {{Grandeur_BE_DotNet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
