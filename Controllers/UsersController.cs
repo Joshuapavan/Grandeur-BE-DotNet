@@ -26,16 +26,17 @@ public class UsersController(IUserRepository userRepository) : BaseController
         return Ok(await userRepository.RegisterUser(userSignInDto));
     }
 
-    [HttpGet("verify_email")]
-    public async Task<ActionResult<UserDto>> VerifyEmail()
-    {
-        return Ok();
-    }
+    // To-Do 
+    // [HttpGet("verify_email")]
+    // public async Task<ActionResult<UserDto>> VerifyEmail()
+    // {
+    //     return Ok();
+    // }
 
-    [HttpPost("login")]
-    public async Task<ActionResult<UserDto>> Login([FromBody] UserLoginDto userLoginDto)
-    {
-        return Ok();
-    }
+    // [HttpPost("login")]
+    // public async Task<ActionResult<UserDto>> Login([FromBody] UserLoginDto userLoginDto)
+    // {
+    //     return Ok();
+    // }
 
 }
