@@ -11,6 +11,11 @@ A DotNet API backend for the Grandeur car marketplace application.
 ## Setup
 
 1. Clone the repository
+
+```bash
+git clone https://github.com/Joshuapavan/Grandeur-BE-DotNet.git
+```
+
 2. Install dependencies:
 
 ```bash
