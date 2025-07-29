@@ -12,7 +12,7 @@ namespace Grandeur_BE_DotNet.Controllers;
 
 
 // api/users
-public class UsersController(IUserRepository userRepository, ITokenService tokenService) : BaseController
+public class UsersController(IUserRepository userRepository) : BaseController
 {
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsersAsync()
