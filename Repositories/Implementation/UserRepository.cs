@@ -3,25 +3,40 @@ using AutoMapper;
 using Grandeur_BE_DotNet.Data;
 using Grandeur_BE_DotNet.DTO;
 using Grandeur_BE_DotNet.Models.Entitiles;
+using Grandeur_BE_DotNet.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Grandeur_BE_DotNet.Repositories.Implementation;
 
-public class UserRepository(AppDbContext context, IMapper mapper) : IUserRepository
+public class UserRepository(AppDbContext context, IMapper mapper, ITokenService tokenService) : IUserRepository
 {
     public async Task<IEnumerable<User>> GetUsersAsync()
     {
         return await context.Users.ToListAsync();
     }
 
-    public Task<UserDto> Login(UserLoginDto userLoginDto)
+    public async Task<UserDto> Login(UserLoginDto userLoginDto)
     {
-        throw new NotImplementedException();
+        var user = await context.Users.FirstOrDefaultAsync(x => x.Email == userLoginDto.Email) ?? throw new Exception("User doesnot exists");
+        if (user.Password != userLoginDto.Password) throw new Exception("Incorrect Password");
+
+        return new UserDto
+        {
+            Email = user.Email,
+            Token = tokenService.CreateToken(user)
+        };
     }
 
-    public Task<UserDto> RegisterUser(UserSignInDto userSignInDto)
+    public async Task<UserDto> RegisterUser(UserSignInDto userSignInDto)
     {
-        throw new NotImplementedException();
+        if (await UserEmailExists(userSignInDto.Email)) throw new Exception($"User with email {userSignInDto.Email} already exists");
+        var user = mapper.Map<User>(userSignInDto);
+        context.Users.Add(user);
+        return new UserDto
+        {
+            Email = user.Email,
+            Token = tokenService.CreateToken(user)
+        };
     }
 
     public Task<UserDto> VerifyEmail()
@@ -35,4 +50,9 @@ public class UserRepository(AppDbContext context, IMapper mapper) : IUserReposit
     }
 
     // Private method to check if the user is present or not
+    private async Task<bool> UserEmailExists(string email)
+    {
+        var user = await context.Users.FirstAsync(x => x.Email == email);
+        return user != null;
+    }
 }

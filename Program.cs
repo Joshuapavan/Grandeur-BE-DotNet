@@ -1,4 +1,5 @@
 using Grandeur_BE_DotNet.Data;
+using Grandeur_BE_DotNet.Middlewares;
 using Grandeur_BE_DotNet.Repositories;
 using Grandeur_BE_DotNet.Repositories.Implementation;
 using Grandeur_BE_DotNet.Services;
@@ -36,7 +37,14 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 { }
 
+// Adding our Global exception handler middleware
+app.UseMiddleware<ExceptionMiddleware>();
+
 app.UseHttpsRedirection();
+
+// Adding Authentication and Authorization
+app.UseAuthentication();
+app.UseAuthorization();
 
 // CORS
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());

@@ -23,7 +23,7 @@ public class UsersController(IUserRepository userRepository, ITokenService token
     [HttpPost("sign_up")]
     public async Task<ActionResult<UserDto>> RegisterUser([FromBody] UserSignInDto userSignInDto)
     {
-        return Ok();
+        return Ok(await userRepository.RegisterUser(userSignInDto));
     }
 
     [HttpGet("verify_email")]
