@@ -5,6 +5,7 @@ using Grandeur_BE_DotNet.Repositories.Implementation;
 using Grandeur_BE_DotNet.Services;
 using Grandeur_BE_DotNet.Services.Implementation;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
-
+builder.Services.AddSwaggerGen();
+// builder.Services.AddOpenApi();
 
 // Adding Db Context
 builder.Services.AddDbContext<AppDbContext>(
@@ -35,7 +37,9 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{ }
+{
+    app.MapScalarApiReference();
+}
 
 // Adding our Global exception handler middleware
 app.UseMiddleware<ExceptionMiddleware>();
