@@ -15,4 +15,7 @@ public class User
     // Time Stamps
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
+
+    // Navigational props
+    public List<Car> Cars { get; set; } = null!;
 }
