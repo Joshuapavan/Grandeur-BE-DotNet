@@ -29,6 +29,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Adding our Services and Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
 
