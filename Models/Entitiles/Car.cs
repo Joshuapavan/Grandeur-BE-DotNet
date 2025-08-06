@@ -18,5 +18,6 @@ public class Car
 
     // Navigational Props
     public required int UserId { get; set; }
+    public required User User { get; set; }
 
 }

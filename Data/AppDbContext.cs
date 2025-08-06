@@ -12,7 +12,12 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<User>()
-                    .HasIndex(u => u.Email)
+                    .HasIndex(user => user.Email)
                     .IsUnique();
+
+        modelBuilder.Entity<User>()
+                    .HasMany(user => user.Cars)
+                    .WithOne(car => car.User)
+                    .HasForeignKey(car => car.UserId);
     }
 }
