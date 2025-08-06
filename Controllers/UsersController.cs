@@ -33,10 +33,10 @@ public class UsersController(IUserRepository userRepository) : BaseController
     //     return Ok();
     // }
 
-    // [HttpPost("login")]
-    // public async Task<ActionResult<UserDto>> Login([FromBody] UserLoginDto userLoginDto)
-    // {
-    //     return Ok();
-    // }
+    [HttpPost("login")]
+    public async Task<ActionResult<UserDto>> Login([FromBody] UserLoginDto userLoginDto)
+    {
+        return Ok(await userRepository.Login(userLoginDto));
+    }
 
 }
