@@ -22,4 +22,8 @@ public class Car
     public required int UserId { get; set; }
     public required User User { get; set; }
 
+    // Car has one Photo
+    public Photo? Photo { get; set; }
+    public int? PhotoId { get; set; }
+
 }

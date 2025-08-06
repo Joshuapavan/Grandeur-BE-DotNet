@@ -1,4 +1,5 @@
 using Grandeur_BE_DotNet.Data;
+using Grandeur_BE_DotNet.Helpers;
 using Grandeur_BE_DotNet.Middlewares;
 using Grandeur_BE_DotNet.Repositories;
 using Grandeur_BE_DotNet.Repositories.Implementation;
@@ -31,6 +32,11 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IPhotoService, PhotoService>();
+
+// Adding Cloudinary
+builder.Services.Configure<CloudinarySettings>(
+    builder.Configuration.GetSection("CloudinarySettings"));
 
 
 
