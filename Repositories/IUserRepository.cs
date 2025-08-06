@@ -12,4 +12,6 @@ public interface IUserRepository
     Task<UserDto> RegisterUser(UserSignInDto userSignInDto);
     Task<UserDto> VerifyEmail();
     Task<UserDto> Login(UserLoginDto userLoginDto);
+
+    Task<User> GetUserAsync(int id);
 }

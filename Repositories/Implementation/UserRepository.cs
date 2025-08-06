@@ -49,6 +49,12 @@ public class UserRepository(AppDbContext context, IMapper mapper, ITokenService 
         return await context.SaveChangesAsync() > 0;
     }
 
+    public async Task<User> GetUserAsync(int id)
+    {
+        var user = await context.Users.FirstAsync(x => x.Id == id) ?? throw new Exception("Unable to identify the user, Please login again.");
+        return user;
+    }
+
     // Private method to check if the user is present or not
     private async Task<bool> UserEmailExists(string email)
     {
