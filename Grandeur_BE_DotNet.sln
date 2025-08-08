@@ -5,8 +5,6 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grandeur_BE_DotNet", "Grandeur_BE_DotNet.csproj", "{D26E8FE0-D94E-2811-8A01-B6525B878117}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grandeur_BE_Dotnet_Tests", "Grandeur_BE_Dotnet_Tests\Grandeur_BE_Dotnet_Tests.csproj", "{2CBBF25E-D3CC-44CD-B260-5E549938519F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{D26E8FE0-D94E-2811-8A01-B6525B878117}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D26E8FE0-D94E-2811-8A01-B6525B878117}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D26E8FE0-D94E-2811-8A01-B6525B878117}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2CBBF25E-D3CC-44CD-B260-5E549938519F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CBBF25E-D3CC-44CD-B260-5E549938519F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CBBF25E-D3CC-44CD-B260-5E549938519F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CBBF25E-D3CC-44CD-B260-5E549938519F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
