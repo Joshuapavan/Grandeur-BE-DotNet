@@ -8,14 +8,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Grandeur_BE_DotNet.Controllers;
 
-public class CarsController(ICarRepository carRepository, IUserRepository userRepository, IPhotoService photoService) : ControllerBase
+// api/cars
+public class CarsController(ICarRepository carRepository, IUserRepository userRepository, IPhotoService photoService) : BaseController
 {
+    // api/cars/all
     [HttpGet("all")]
     public async Task<ActionResult<IEnumerable<Car>>> GetCars()
     {
         return Ok(await carRepository.GetCarsAsync());
     }
 
+    // api/cars/new
     [HttpPost("new")]
     public async Task<ActionResult<Car>> CreateCarAsync([FromBody] CarRequestDto carRequestDto)
     {
@@ -24,6 +27,7 @@ public class CarsController(ICarRepository carRepository, IUserRepository userRe
         return Ok(await carRepository.CreateCarAsync(carRequestDto, user));
     }
 
+    // api/cars/delete
     [HttpDelete("delete")]
     public async Task<ActionResult<Car>> DeleteAllCarsAsync()
     {
@@ -37,6 +41,7 @@ public class CarsController(ICarRepository carRepository, IUserRepository userRe
         }
     }
 
+    // api/cars/add-photo
     [HttpPost("add-photo")]
     public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file)
     {

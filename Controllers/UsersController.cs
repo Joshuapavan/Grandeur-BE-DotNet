@@ -14,12 +14,14 @@ namespace Grandeur_BE_DotNet.Controllers;
 // api/users
 public class UsersController(IUserRepository userRepository) : BaseController
 {
+    // api/users
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsersAsync()
     {
         return Ok(await userRepository.GetUsersAsync());
     }
 
+    // api/users/sign_up
     [HttpPost("sign_up")]
     public async Task<ActionResult<UserDto>> RegisterUser([FromBody] UserSignInDto userSignInDto)
     {
@@ -33,6 +35,7 @@ public class UsersController(IUserRepository userRepository) : BaseController
     //     return Ok();
     // }
 
+    // api/users/login
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login([FromBody] UserLoginDto userLoginDto)
     {
