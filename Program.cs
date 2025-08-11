@@ -7,7 +7,6 @@ using Grandeur_BE_DotNet.Services;
 using Grandeur_BE_DotNet.Services.Implementation;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
-using AutoMapper;
 
 
 var builder = WebApplication.CreateBuilder(args);

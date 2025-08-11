@@ -1,4 +1,3 @@
-using System;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Grandeur_BE_DotNet.Helpers;

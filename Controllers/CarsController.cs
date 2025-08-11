@@ -3,7 +3,6 @@ using Grandeur_BE_DotNet.Extensions;
 using Grandeur_BE_DotNet.Models.Entitiles;
 using Grandeur_BE_DotNet.Repositories;
 using Grandeur_BE_DotNet.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Grandeur_BE_DotNet.Controllers;

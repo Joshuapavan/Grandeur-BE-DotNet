@@ -1,12 +1,7 @@
-using AutoMapper;
-using Grandeur_BE_DotNet.Data;
 using Grandeur_BE_DotNet.DTO;
 using Grandeur_BE_DotNet.Models.Entitiles;
 using Grandeur_BE_DotNet.Repositories;
-using Grandeur_BE_DotNet.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Grandeur_BE_DotNet.Controllers;
 

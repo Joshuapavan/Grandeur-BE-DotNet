@@ -1,5 +1,3 @@
-using System;
-
 namespace Grandeur_BE_DotNet.Models.Entitiles;
 
 public class User

@@ -1,5 +1,3 @@
-using System;
-
 namespace Grandeur_BE_DotNet.Exceptions;
 
 public class ApiException(int statusCode, string message, string? details)

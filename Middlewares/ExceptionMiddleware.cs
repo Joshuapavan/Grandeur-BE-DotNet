@@ -1,4 +1,3 @@
-using System;
 using System.Net;
 using System.Text.Json;
 using Grandeur_BE_DotNet.Exceptions;

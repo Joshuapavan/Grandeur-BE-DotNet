@@ -1,4 +1,3 @@
-using System;
 using CloudinaryDotNet.Actions;
 
 namespace Grandeur_BE_DotNet.Services;

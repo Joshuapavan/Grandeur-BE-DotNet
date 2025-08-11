@@ -1,4 +1,3 @@
-using System;
 using System.Security.Claims;
 
 namespace Grandeur_BE_DotNet.Extensions;
